@@ -11,6 +11,15 @@
 	<name>service-entity</name>
 	<description>账户信息模块</description>
 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jdk.version>1.8</jdk.version>
+		<maven.compile.plugin.version>3.6.1</maven.compile.plugin.version>
+		<swagger.version>2.7.0</swagger.version>
+		<commons.lang.version>2.6</commons.lang.version>
+		<spring.boot.version>1.5.2.RELEASE</spring.boot.version>
+	</properties>
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -18,11 +27,6 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
-	</properties>
 
 	<dependencies>
 		<dependency>
@@ -50,8 +54,13 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compile.plugin.version}</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
